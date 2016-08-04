@@ -6,14 +6,15 @@
   <thead>
     <tr>
       <th>Ingredient</th>
-      <th colspan="3"></th>
+      <th>Dose description</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @ingredients.each do |ingredient|  %>
+    <% @cocktail.doses.each do |dose|  %>
       <tr>
-        <td><%= ingredient.name %></td>
+        <td><%= dose.ingredient.name %></td>
+        <td><%= dose.description %></td>
       </tr>
     <% end %>
   </tbody>

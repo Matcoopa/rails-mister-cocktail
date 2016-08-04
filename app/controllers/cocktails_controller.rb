@@ -7,7 +7,6 @@ class CocktailsController < ApplicationController
   end
 
   def show
-    @ingredients = @cocktail.ingredients
   end
 
 private
