@@ -1,0 +1,23 @@
+<h1>Cocktail's nerd?</h1>
+<h2> Before drinking <strong><%= @cocktail.name %></strong>, here is what you should know:</h2>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Ingredient</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients.each do |ingredient|  %>
+      <tr>
+        <td><%= ingredient.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "Ask our barmaids again about our cocktails", cocktails_path %>
