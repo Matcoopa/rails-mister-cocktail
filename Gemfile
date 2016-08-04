@@ -5,10 +5,6 @@ source 'https://rubygems.org'
 gem 'rails_12factor', group: :production
 gem 'puma',           group: :production
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-plugin'
-end
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
