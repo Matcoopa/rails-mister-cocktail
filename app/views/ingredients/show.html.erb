@@ -1,0 +1,8 @@
+<h1> Cocktails that include <strong><%= @ingredient.name %></strong></h1>
+<ul>
+  <% @ingredient.cocktails.each do |cocktail| %>
+  <li>
+    <%= cocktail.name %>
+  </li>
+  <% end %>
+</ul>

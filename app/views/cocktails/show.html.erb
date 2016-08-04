@@ -1,24 +1,35 @@
-<h1>Cocktail's nerd?</h1>
-<h2> Before drinking <strong><%= @cocktail.name %></strong>, here is what you should know:</h2>
+<div class="text-center">
+  <h1>Cocktail's nerd?</h1>
+  <h2> Before drinking <strong><%= @cocktail.name %></strong>, here is what you should know:</h2>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>Ingredient</th>
-      <th>Dose description</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>Ingredient</th>
+        <th>Dose description</th>
+      </tr>
+    </thead>
 
-  <tbody>
-    <% @cocktail.doses.each do |dose|  %>
+    <tbody>
+      <% @cocktail.doses.each do |dose|  %>
       <tr>
         <td><%= dose.ingredient.name %></td>
         <td><%= dose.description %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </tbody>
+  </table>
 
 
-<%= link_to "Ask our barmaids again about our cocktails", cocktails_path %>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description, placeholder: "6cl au moins" %>
+    <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose an ingredient" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+
+
+  <%= link_to "Ask our barmaids again about our cocktails", cocktails_path %>
+
+</div>
+
